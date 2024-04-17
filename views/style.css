@@ -172,6 +172,10 @@ a {
   --bs-list-group-border-width: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 /* btn */
 .btn {
   --bs-btn-border-radius: 0;

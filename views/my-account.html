@@ -371,12 +371,52 @@
     </div>
   </section>
 
-  <section id="signup-form" class="py-5">
+
+
+
+
+
+
+  <section id="login-form" class="py-5">
+    <div class="container-sm">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h2 class="section-title text-uppercase">Login</h2>
+          <form id="form-login" class="form-group flex-wrap">
+            <div class="col-12 pb-3">
+              <label>Username or email address *</label>
+              <input type="text" name="name" placeholder="Write your username / email address here"
+                class="form-control">
+            </div>
+            <div class="col-12 pb-3">
+              <label>Password *</label>
+              <input type="text" name="email" placeholder="Enter your password" class="form-control">
+            </div>
+            <div class="col-12 pb-3">
+              <label>
+                <input type="checkbox" required="">
+                <span class="label-body">Remember me</span>
+              </label>
+            </div>
+            <div class="col-12">
+              <button type="submit" name="submit" class="btn btn-dark btn-large text-uppercase pb-3">Log in</button>
+              <p><a href="#">Lost your password?</a></p>
+            </div>
+            
+            <button type="button" class="btn btn-link" onclick="toggleForms()">Don't have an account? Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup-form" class="py-5 hidden">
     <div class="container-sm">
       <div class="row justify-content-center">
         <div class="col-4">
           <h2 class="section-title text-uppercase">Sign Up</h2>
           <form id="form-signup" class="form-group flex-wrap">
+            <!-- Signup form fields -->
             <div class="col-12 pb-3">
               <label>Username *</label>
               <input type="text" name="username" placeholder="Choose your username" class="form-control">
@@ -407,39 +447,15 @@
       </div>
     </div>
   </section>
+
+
+
+ 
   
 
-  <section id="login-form" class="py-5">
-    <div class="container-sm">
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <h2 class="section-title text-uppercase">Login</h2>
-          <form id="form" class="form-group flex-wrap">
-            <div class="col-12 pb-3">
-              <label>Username or email address *</label>
-              <input type="text" name="name" placeholder="Write your username / email address here"
-                class="form-control">
-            </div>
-            <div class="col-12 pb-3">
-              <label>Password *</label>
-              <input type="text" name="email" placeholder="Enter your password" class="form-control">
-            </div>
-            <div class="col-12 pb-3">
-              <label>
-                <input type="checkbox" required="">
-                <span class="label-body">Remember me</span>
-              </label>
-            </div>
-            <div class="col-12">
-              <button type="submit" name="submit" class="btn btn-dark btn-large text-uppercase pb-3">Log in</button>
-              <p><a href="#">Lost your password?</a></p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
+
+  
 
   <section class="instagram py-5">
     <div class="container">
@@ -612,6 +628,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="../controllers/formToggle.js"></script>
 </body>
 
 </html>
