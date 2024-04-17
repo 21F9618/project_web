@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Kaira - Bootstrap 5 Fashion Store HTML CSS Template</title>
+  <title>Felicity - Account</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -229,6 +229,9 @@
   </div>
 
 
+
+
+  
   <nav class="navbar navbar-expand-lg text-uppercase fs-6 p-3 border-bottom align-items-center">
     <div class="container-fluid">
       <div class="row justify-content-between align-items-center w-100">
@@ -309,6 +312,17 @@
 
         <div class="col-3 col-lg-auto">
           <ul class="list-unstyled d-flex m-0">
+
+            <li>
+              <a href="my-account.html" class="mx-2">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#user"></use>
+                </svg>
+              </a>
+            </li>
+            
+
+
             <li class="d-none d-lg-block">
               <a href="wishlist.html" class="text-uppercase mx-3">Wishlist <span class="wishlist-count">(0)</span>
               </a>
@@ -337,7 +351,10 @@
       </div>
     </div>
   </nav>
+  
 
+
+  
 
   <section class="hero-section bg-light py-4">
     <div class="hero-content">
@@ -345,10 +362,8 @@
         <div class="row">
           <div class="text-center">
             <div class="breadcrumbs">
-              <span class="item">
-                <a href="index.html">Home /</a>
-              </span>
-              <span class="item">Wishlist</span>
+              <span class="item"><a href="index.html">Home /</a></span>
+              <span class="item">My Account</span>
             </div>
           </div>
         </div>
@@ -356,109 +371,70 @@
     </div>
   </section>
 
-  <section id="Wishlist" class="py-5 my-5">
-    <div class="container">
-      <div class="row text-dark my-3">
-        <div class="col-5 text-uppercase">Product</div>
-        <div class="col-2 text-uppercase">Unit Price</div>
-        <div class="col-2 text-uppercase">Stock Status</div>
+  <section id="signup-form" class="py-5">
+    <div class="container-sm">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h2 class="section-title text-uppercase">Sign Up</h2>
+          <form id="form-signup" class="form-group flex-wrap">
+            <div class="col-12 pb-3">
+              <label>Username *</label>
+              <input type="text" name="username" placeholder="Choose your username" class="form-control">
+            </div>
+            <div class="col-12 pb-3">
+              <label>Email Address *</label>
+              <input type="email" name="email" placeholder="Enter your email address" class="form-control">
+            </div>
+            <div class="col-12 pb-3">
+              <label>Password *</label>
+              <input type="password" name="password" placeholder="Create your password" class="form-control">
+            </div>
+            <div class="col-12 pb-3">
+              <label>Confirm Password *</label>
+              <input type="password" name="confirm_password" placeholder="Confirm your password" class="form-control">
+            </div>
+            <div class="col-12 pb-3">
+              <label>
+                <input type="checkbox" required="">
+                <span class="label-body">I agree to the Terms and Conditions</span>
+              </label>
+            </div>
+            <div class="col-12">
+              <button type="submit" name="submit" class="btn btn-dark btn-large text-uppercase">Sign Up</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="product-wrapper">
-        <div class="product-item row align-items-center mb-4">
-          <div class="col-4 col-md-1 d-flex align-items-center text-left">
-            <a href="#">
-              <img srcset="images/wishlist-item1.jpg" alt="wishlist" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-8 col-md-4">
-            <h3 class="item-title text-uppercase fs-5">
-              <a href="#">Handmade crop sweater</a>
-            </h3>
-          </div>
-          <div class="col-3 col-md-2 product-price text-left">
-            <span class="item-price">$54.99</span>
-          </div>
-          <div class="col-3 col-md-2 wishlist-stock text-left">
-            <span class="item-stock">In Stock</span>
-          </div>
-          <div class="col-3 col-md-2 wishlist-add text-left">
-            <form action="" method="post" class="variants">
-              <a class="btn btn-outline-dark text-uppercase" title="Add to Cart" href="#">Add To Cart</a>
-            </form>
-          </div>
-          <div class="col-3 col-md-1 text-left">
-            <div class="cart-remove">
-              <a href="#">
-                <svg width="32px">
-                  <use xlink:href="#trash"></use>
-                </svg>
-              </a>
+    </div>
+  </section>
+  
+
+  <section id="login-form" class="py-5">
+    <div class="container-sm">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h2 class="section-title text-uppercase">Login</h2>
+          <form id="form" class="form-group flex-wrap">
+            <div class="col-12 pb-3">
+              <label>Username or email address *</label>
+              <input type="text" name="name" placeholder="Write your username / email address here"
+                class="form-control">
             </div>
-          </div>
-        </div>
-        <div class="product-item row align-items-center mb-4">
-          <div class="col-4 col-md-1 d-flex align-items-center text-left">
-            <a href="#">
-              <img srcset="images/wishlist-item2.jpg" alt="wishlist" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-8 col-md-4">
-            <h3 class="item-title text-uppercase fs-5">
-              <a href="#">Dark florish onepiece</a>
-            </h3>
-          </div>
-          <div class="col-3 col-md-2 product-price text-left">
-            <span class="item-price">$94.99</span>
-          </div>
-          <div class="col-3 col-md-2 wishlist-stock text-left">
-            <span class="item-stock">In Stock</span>
-          </div>
-          <div class="col-3 col-md-2 wishlist-add text-left">
-            <form action="" method="post" class="variants">
-              <a class="btn btn-outline-dark text-uppercase" title="Add to Cart" href="#">Add To Cart</a>
-            </form>
-          </div>
-          <div class="col-3 col-md-1 text-left">
-            <div class="cart-remove">
-              <a href="#">
-                <svg width="32px">
-                  <use xlink:href="#trash"></use>
-                </svg>
-              </a>
+            <div class="col-12 pb-3">
+              <label>Password *</label>
+              <input type="text" name="email" placeholder="Enter your password" class="form-control">
             </div>
-          </div>
-        </div>
-        <div class="product-item row align-items-center mb-4">
-          <div class="col-4 col-md-1 d-flex align-items-center text-left">
-            <a href="#">
-              <img srcset="images/wishlist-item3.jpg" alt="wishlist" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-8 col-md-4">
-            <h3 class="item-title text-uppercase fs-5">
-              <a href="#">Baggy shirt</a>
-            </h3>
-          </div>
-          <div class="col-3 col-md-2 product-price text-left">
-            <span class="item-price">$54.99</span>
-          </div>
-          <div class="col-3 col-md-2 wishlist-stock text-left">
-            <span class="item-stock">In Stock</span>
-          </div>
-          <div class="col-3 col-md-2 wishlist-add text-left">
-            <form action="" method="post" class="variants">
-              <a class="btn btn-outline-dark text-uppercase" title="Add to Cart" href="#">Add To Cart</a>
-            </form>
-          </div>
-          <div class="col-3 col-md-1 text-left">
-            <div class="cart-remove">
-              <a href="#">
-                <svg width="32px">
-                  <use xlink:href="#trash"></use>
-                </svg>
-              </a>
+            <div class="col-12 pb-3">
+              <label>
+                <input type="checkbox" required="">
+                <span class="label-body">Remember me</span>
+              </label>
             </div>
-          </div>
+            <div class="col-12">
+              <button type="submit" name="submit" class="btn btn-dark btn-large text-uppercase pb-3">Log in</button>
+              <p><a href="#">Lost your password?</a></p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -522,7 +498,7 @@
           <div class="footer-menu footer-menu-001">
             <div class="footer-intro mb-4">
               <a class="nav-link active" href="index.html" style="font-weight: bold; font-size: 2rem;">Felicity
-              </a>   
+              </a> 
             </div>
             <p>Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in. Nisi, purus
               vitae, ultrices nunc. Sit ac sit suscipit hendrerit.</p>
@@ -567,7 +543,7 @@
             </div>
           </div>
         </div>
-       
+        
         <div class="col-md-3 col-sm-6">
           <div class="footer-menu footer-menu-003">
             <h5 class="widget-title text-uppercase mb-4">Help & Info</h5>
@@ -622,7 +598,7 @@
             </div>
           </div>
           <div class="col-md-6 text-end">
-            <p>© Copyright 2022 Felicity. </p>
+            <p>© Copyright 2024 Felicity. All rights reserved.</p>
           </div>
         </div>
       </div>
