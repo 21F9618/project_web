@@ -1,0 +1,190 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-image: url(/images/cat-item3.jpg);
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: 0px -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.Form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    backdrop-filter: blur(40px);
+    color: white;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 16px;
+    overflow: hidden; 
+    margin-right: 20%;
+}
+.Form-box.expanded {
+    height: 600px; /* Increased height when signup form is active */
+}
+.Form-box form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s ease;/* through this its is changing form in a smooth way else it is gonna change like real quick page change without any trasition */
+}
+.Form-box .signup-form{
+     transform: translateX(-100%);/* this is actually traslating our second form (signup form) on x axis and we show it only when we click button if i change this into traslateY the register form will appear from above and trnsition toward bottom*/
+}
+.Form-box .forgotPass-form{
+    transform: translateX(-100%);/* this is actually traslating our second form (signup form) on x axis and we show it only when we click button if i change this into traslateY the register form will appear from above and trnsition toward bottom*/
+}
+.input-box{
+     width: 80%; 
+     display: flex; 
+    justify-content: space-between;
+    position: relative;
+     border-bottom: 2px solid white; /*it is actually for the line on which we are giving out inputs on form and by only styling border-bottom so that the it shows in a form of a single line*/
+    margin: 20px 0px;
+}
+.signup-form .input-box{
+    margin: 20px 0px;
+}
+.input-box input{
+    width: 90%;
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.input-box label{
+     transition: .4s; /*it provide trasition when we click on input line for input so it provide trasition to our labels like emails,password*/
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label
+{
+    transform: translateY(-25px); /*how much the label should go above in trasition this is happening here like we are changing the position of labels like email -25px by traslating it on y-axis that's why the line move in -y dirction*/
+}
+.input-box ion-icon{
+    font-size: 25px; /*It is actually defining the size of our icon which we pick from an online website it is managing it*/
+}
+.checkbox{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.submit-btn{
+    width: 80%;
+    height: 30px;
+    cursor:pointer;
+    border-radius: 20px;
+    margin: 20px 0px;
+    border: none; /*to avoid the border around button*/
+    font-size: 16px;
+}
+.Form-box h5,
+.checkbox label,
+.checkbox input{
+    cursor: pointer; /*specifically trying to specify that on which label or heading or text which i make a button or i want to make a change in my page when user click on it the arrow change so that the user know thar it is a clickable button*/
+}
+
+.change-form{
+    height: 500px;
+}
+
+/* change-form1 is when SignUp button is clicked,change-form2 is when Login button is clicked,change-form3 is when forgot-password button is clicked */
+/* translate 100 means hide */
+.change-form1 .Login-form{
+    transform: translateX(100%); 
+}
+.change-form1 .forgotPass-form{
+    transform: translateX(100%);
+}
+.change-form1 .signup-form{
+    transform: translateX(0%);
+}
+
+/* translate 100 means hide */
+.change-form2 .signup-form{
+    transform: translateX(100%); 
+}
+.change-form2 .forgotPass-form{
+    transform: translateX(100%);
+}
+.change-form2 .Login-form{
+    transform: translateX(0%);
+}
+
+/* translate 100 means hide */
+.change-form3 .signup-form{
+    transform: translateX(100%); 
+}
+.change-form3 .Login-form{
+    transform: translateX(100%);
+}
+.change-form3 .forgotPass-form{
+    transform: translateX(0%);
+}
+.otp_verify {
+    transform: translateX(100%);
+}
+.change-form4 .otp_verify {
+    transform: translateX(0%);
+}
+.change-form4 .Login-form {
+    transform: translateX(100%);
+}
+/* .Login-form{
+    visibility: hidden;
+}
+.otp_verify{
+    visibility: visible;
+} */
+.input-feild input{
+    margin-top: 10px;
+    border-radius: 6px;
+    outline: none;
+    height:45px;
+    width:42px;
+    font-size: 1.125rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.otp_verify button{
+    margin-top: 25px;
+    width:30%;
+    height: 5%;
+    background-color: #6e93f7;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    padding: 9px , 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+#opt_v.active {
+    background: #0e4bf1;
+}
+
+.otp_verify .otp-input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Remove the default spinner arrows for number input fields */
+.otp_verify .otp-input::-webkit-inner-spin-button,
+.otp_verify .otp-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
