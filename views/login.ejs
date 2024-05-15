@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+
+  </head>
+  <body>
+    <div class="Form-box">
+      <form class="Login-form" action="/login" method="post">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" id="emaillogin" name="emaillogin" required value="zhalaym@gmail.com" >
+          <label>Email</label>
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+        <div class="input-box">
+          <input type="password" id="loginPass" name="loginPass" required value="12345!" >
+          <label>Password</label>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </div>
+        <% if(role == "user"){ %>
+        <div class="checkbox">
+          <span>
+            <input type="checkbox" id="login-checkbox">
+            <label for="login-checkbox">Remember Me</label>
+          </span>
+          <h5 class="forgot-btn">Forgot Password ?</h5>
+        </div>
+        <% } %>
+        <button type="submit" class="submit-btn">Submit</button>
+        <% if(role == "user"){ %>
+        <h5 class="signup-btn">Don't have an account ? Signup</h5>
+        <% } %>
+      </form>
+
+      <form class="signup-form" action="/signup" method="post">
+        <h1>Signup</h1>
+        <div class="input-box">
+          <input type="text" name="fname_Signup" id="fname_Signup" required>
+          <label>First Name</label>
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        <div class="input-box">
+          <input type="text" name="username_Signup" id="username_Signup" required>
+          <label>Username</label>
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        <div class="input-box">
+          <input type="text" id="emailsignup" name="emailsignup" required>
+          <label>Email</label>
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+        <div class="input-box">
+          <input type="password" id="signupPass" name="signupPass" required>
+          <label>Password</label>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </div>
+        <div class="input-box">
+          <input type="tel" id="pn" name="pn" required>
+          <label>Phone Number</label>
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="signup-checkbox">
+          <label for="signup-checkbox">I agree to the terms & conditions</label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+        <h5 class="Login-btn">Already have an account? Login</h5>
+      </form>
+
+      <form class="forgotPass-form" action="/forgotPass"   method="post">
+        <h1>Reset Password</h1>
+        <div class="input-box">
+          <input type="text" id="emailForgot" name="emailForgot" required>
+          <label>Email</label>
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+        <div class="input-box">
+          <input type="password" id="newPass" name="newPass"  required>
+          <label>New Password</label>
+          <ion-icon name="lock-open-outline"></ion-icon>
+        </div>
+        <div class="input-box">
+          <input type="password" id="cnfrmPass" name="cnfrmPass" required>
+          <label>Confirm Password</label>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </div>
+        <div class="checkbox">
+          <span>
+            <input type="checkbox" id="reset-checkbox">
+            <label for="reset-checkbox">Remember Me</label>
+          </span>
+        </div>
+        <button type="submit" class="submit-btn" id="reset">Reset
+          Password</button>
+        <h5 class="Login-btn">Return to <kbd>Login</kbd> page</h5>
+
+      </form>
+
+      <form class="otp_verify" action="/otp" method="post">
+        <h2>OTP verification</h2>
+        <div class="input-feild">
+          <input class="otp-input" type="number" />
+          <input class="otp-input" type="number" disabled />
+          <input class="otp-input" type="number" disabled />
+          <input class="otp-input" type="number" disabled />
+        </div>
+        <button onclick="sendOTP()">Send OTP</button>
+        <button type="submit" class="submit-btn" id="opt_v">Verify OTP</button>
+      </form>
+
+    </div>
+
+    <script type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="/js/script.js"></script>  <!-- My javascript file for event handling-->
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    
+  </body>
+</html>
