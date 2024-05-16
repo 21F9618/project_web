@@ -102,7 +102,8 @@ async function confirmLogin(req, res) {
             if(user.IsAdmin === false){
                 res.redirect('/home');
             }else{
-                res.redirect('/admin')
+                console.log("in admin wali else")
+                res.redirect('/Aproduct')
             }
 
         } else {
@@ -116,11 +117,13 @@ async function confirmLogin(req, res) {
 }
 
 
-async function addproduct(name, description, price, category, quantity, image) {
+
+async function addproduct(req , res) {
+    console.log("in addproduct in mongodb");
     try {
         const { database } = await connectToMongoDB();
         const collection = database.collection('products');
-
+        const { name, description, price, category, quantity, image } = req.body;
         // Insert product into the collection
         await collection.insertOne({
             name: name,
@@ -135,6 +138,78 @@ async function addproduct(name, description, price, category, quantity, image) {
         throw error; // Rethrow the error to be caught by the caller
     }
 }
+
+
+async function uproduct(req , res) {
+    console.log("in update product in mongodb");
+    try {
+        const { database } = await connectToMongoDB();
+        const collection = database.collection('products');
+        const { name, price, quantity } = req.body;
+        const p = await collection.findOne({ name: req.body.name });
+
+        if (!p) {
+            console.log('product not found');
+            return res.status(404).send('product not Found');
+        }
+        
+        // Insert product into the collection
+        await collection.updateOne(
+            {name:req.body.name},
+            {
+                $set:{
+                    name: name,
+                    price: price,
+                    quantity: quantity,
+
+                }
+            }
+        );
+    } catch (error) {
+        console.error('Error updating product:', error);
+        throw error; // Rethrow the error to be caught by the caller
+    }
+}
+
+
+async function sproduct(req , res) {
+    console.log("in search product in mongodb");
+      try {
+        const { database } = await connectToMongoDB();
+        const collection = database.collection('products');
+        const { name } = req.query;
+
+        // Find the product by name
+        const product = await collection.findOne({ name: name });
+
+        if (!product) {
+            console.log('Product not found');
+            return res.status(404).send('<p>Product not found</p>');
+        }
+
+        console.log('Product found:', product);
+        const productHtml = `
+            <h2>Product Details</h2>
+            <p><strong>Name:</strong> ${product.name}</p>
+            <p><strong>Description:</strong> ${product.description}</p>
+            <p><strong>Price:</strong> $${product.price}</p>
+            <p><strong>Category:</strong> ${product.category}</p>
+            <p><strong>Quantity:</strong> ${product.quantity}</p>
+            <p><strong>Image:</strong> <img src="${product.image}" alt="${product.name}" style="max-width: 200px;"></p>
+        `;
+        return productHtml; // Send the product data as HTML response
+    } catch (error) {
+        console.error('Error retrieving product:', error);
+        res.status(500).send('<p>Internal Server Error</p>'); // Send error response as HTML
+    }
+}
+
+
+
+
+
+
+
 
 
 
@@ -183,4 +258,4 @@ async function getProducts(req, res) {
 
 
 
-module.exports = { verifyOtp, confirmLogin, registerUser, changePass, getProducts , addproduct };
+module.exports = { verifyOtp, confirmLogin, registerUser, changePass, getProducts , addproduct,uproduct,sproduct };

@@ -103,36 +103,51 @@
             <button class="button" id="search-product">Search Product</button>
         </div>
         <div id="product-form" class="form-container">
-            <form id="add-product-form">
-                <input type="text" placeholder="Name" , id="name" required>
-                <input type="text" placeholder="Description"  , id="description" required>
-                <input type="number" placeholder="Price" id="price" required>
-                <input type="text" placeholder="Category" id="category" required>
-                <input type="number" placeholder="Quantity" id="quantity" required>
-                <input type="text" placeholder="Image URL" id="image" required>
+            <form id="add-product-form" action="/Aproduct" method="post">
+                <input type="text" placeholder="Name" name="name"   id="name" required>
+                <input type="text" placeholder="Description"  name="description" id="description" required>
+                <input type="number" placeholder="Price"  name="price"  id="price" required>
+                <input type="text" placeholder="Category" name="category"  id="category" required>
+                <input type="number" placeholder="Quantity"  name="quantity"  id="quantity" required>
+                <input type="text" placeholder="Image URL"  name="image"   id="image" required>
                 <input type="submit" value="Add Product">
             </form>
         </div>
         <div id="delete-product-form" class="form-container">
             <form id="delete-product-form-element">
-                <input type="text" placeholder="Product ID" id="product-id" required>
-                <input type="submit" value="Delete Product">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Image</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body">
+                        <!-- Product rows will be inserted here -->
+                    </tbody>
+                </table>
             </form>
         </div>
-        <div id="update-product-form" class="form-container">
-            <form id="update-product-form-element">
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="Description">
-                <input type="number" placeholder="Price" id="update-price" required>
-                <input type="text" placeholder="Category">
-                <input type="number" placeholder="Quantity" id="update-quantity" required>
-                <input type="text" placeholder="Image URL">
+        <div id="update-product-form"  class="form-container">
+            <form id="update-product-form-element" Action="/uproduct" method="post" >
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="number" name="price" placeholder="Price" id="update-price" required>
+                <!-- <input type="text" name="category" placeholder="Category"> -->
+                <input type="number" name="quantity" placeholder="Quantity" id="update-quantity" required>
+                <!-- <input type="text" name="image" placeholder="Image URL"> -->
                 <input type="submit" value="Update Product">
             </form>
         </div>
+
         <div id="search-product-form" class="form-container">
-            <form id="search-product-form-element">
-                <input type="text" placeholder="Product ID" id="search-product-id" required>
+            <form id="search-product-form-element" Action="/sproduct" method="get" >
+                <input type="text" placeholder="name" name="name" id="search-product-id" required>
                 <input type="submit" value="Search Product">
             </form>
         </div>
