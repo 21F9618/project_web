@@ -27,6 +27,7 @@ exports.getHomePage = (req, res) => {
 };
 
 exports.getAdminPage = (req, res) => {
+    console.log("admin page")
     const sessionData = req.session;
     res.render(path.join(__dirname, '../views/admin'), { sessionInfo: sessionData }); 
 };
