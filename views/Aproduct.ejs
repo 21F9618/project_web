@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <title>Admin Product</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1d2634;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            display: none;
+            width: 80%;
+            max-width: 300px;
+            background-color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 0;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Admin Product</h1>
+        <div class="button-container">
+            <button class="button" id="add-product">Add Product</button>
+            <button class="button" id="delete-product">Delete Product</button>
+            <button class="button" id="update-product">Update Product</button>
+            <button class="button" id="search-product">Search Product</button>
+        </div>
+        <div id="product-form" class="form-container">
+            <form id="add-product-form">
+                <input type="text" placeholder="Name" , id="name" required>
+                <input type="text" placeholder="Description"  , id="description" required>
+                <input type="number" placeholder="Price" id="price" required>
+                <input type="text" placeholder="Category" id="category" required>
+                <input type="number" placeholder="Quantity" id="quantity" required>
+                <input type="text" placeholder="Image URL" id="image" required>
+                <input type="submit" value="Add Product">
+            </form>
+        </div>
+        <div id="delete-product-form" class="form-container">
+            <form id="delete-product-form-element">
+                <input type="text" placeholder="Product ID" id="product-id" required>
+                <input type="submit" value="Delete Product">
+            </form>
+        </div>
+        <div id="update-product-form" class="form-container">
+            <form id="update-product-form-element">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Description">
+                <input type="number" placeholder="Price" id="update-price" required>
+                <input type="text" placeholder="Category">
+                <input type="number" placeholder="Quantity" id="update-quantity" required>
+                <input type="text" placeholder="Image URL">
+                <input type="submit" value="Update Product">
+            </form>
+        </div>
+        <div id="search-product-form" class="form-container">
+            <form id="search-product-form-element">
+                <input type="text" placeholder="Product ID" id="search-product-id" required>
+                <input type="submit" value="Search Product">
+            </form>
+        </div>
+    </div>
+    <script src="/js/product.js"></script>
+</body>
+
+</html>

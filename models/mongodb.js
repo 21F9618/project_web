@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 let Name, Username, Email, Password, Contact;
 
 // Connection URI
-const uri = 'mongodb+srv://f219618:123@cluster0.hrmhene.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = 'mongodb+srv://f219618:123@cluster0.hrmhene.mongodb.net/';
 // Create a new MongoClient
 const client = new MongoClient(uri);
 
@@ -13,7 +13,7 @@ async function connectToMongoDB() {
     try {
         await client.connect();          // Connect to the MongoDB cluster
         console.log('Connected to MongoDB Atlas');
-        return { client, database: client.db('Alkure') };       // Return the connected client and database
+        return { client, database: client.db('Felecity') };       // Return the connected client and database
     }
     catch (error) {
         console.error('Error connecting to MongoDB Atlas:', error);
@@ -102,7 +102,7 @@ async function confirmLogin(req, res) {
             if(user.IsAdmin === false){
                 res.redirect('/home');
             }else{
-                // Add admin routes here when ready
+                res.redirect('/admin')
             }
 
         } else {
@@ -114,6 +114,29 @@ async function confirmLogin(req, res) {
         res.status(500).send('Error handling /login Post request');
     }
 }
+
+
+async function addproduct(name, description, price, category, quantity, image) {
+    try {
+        const { database } = await connectToMongoDB();
+        const collection = database.collection('products');
+
+        // Insert product into the collection
+        await collection.insertOne({
+            name: name,
+            description: description,
+            price: price,
+            category: category,
+            quantity: quantity,
+            image: image
+        });
+    } catch (error) {
+        console.error('Error adding product:', error);
+        throw error; // Rethrow the error to be caught by the caller
+    }
+}
+
+
 
 async function changePass(req, res) {
     try {
@@ -160,7 +183,4 @@ async function getProducts(req, res) {
 
 
 
-module.exports = { verifyOtp, confirmLogin, registerUser, changePass, getProducts };
-
-
-
+module.exports = { verifyOtp, confirmLogin, registerUser, changePass, getProducts , addproduct };
