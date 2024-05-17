@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let otp_val;
 function sendOTP() {
+  alert("in send otp");
   event.preventDefault();
   const email = document.getElementById("emailsignup");
   const otpInput = document.querySelector(".otp_verify .otp-input");
@@ -67,9 +68,9 @@ function sendOTP() {
   let emailbody = `<h2>Your OTP is ${otp_val}</h2>`;
 
   Email.send({
-    SecureToken: "407248bd-fcaf-4ac5-9bb6-58dce7669734",
+    SecureToken: "998b1271-d7b6-47e1-88b1-5952b4018a31",
     To: email.value,
-    From: "zhalaym@gmail.com",
+    From: "almasaina2003@gmail.com",
     Subject: "Email OTP verification",
     Body: emailbody,
   }).then(message => {

@@ -30,7 +30,7 @@ const { verifyOtp, confirmLogin, registerUser, changePass,addproduct,uproduct ,s
 
 const isAuthenticated = (req, res, next) => {
     const currentUrl = req.url;
-    const protectedPages = ['/home', '/products'];
+    const protectedPages = ['/home','/cart', '/products' , '/women_collection', '/men_collection','/makeup','/accessories','/shoes','/sale','/blog','/about','/coming','/contact'];
     const adminProtectedPages = ['/admin' , '/Aproduct'];
 
     // Check if the user is logged in
@@ -40,11 +40,13 @@ const isAuthenticated = (req, res, next) => {
 
     // Check if the accessed route is a protected route for either regular users or admins
     if (protectedPages.includes(currentUrl) && !req.session.isAdmin) {
+        console.log("print");
         // Grant access for regular users
         return next();
     } else if (adminProtectedPages.includes(currentUrl) && req.session.isAdmin) {
         // console.log("in admin true if")
         // Grant access for admins
+        console.log("admin if......")
         return next();
     } else {
         console.log("in admin false if")
@@ -63,6 +65,27 @@ router.get('/login/:role', pageController.getLoginPage);  //login form
 router.get('/admin' ,isAuthenticated ,  pageController.getAdminPage);  //admin dashboard
 
 router.get('/Aproduct' ,isAuthenticated ,  pageController.getAdminProduct);  //admin dashboard
+
+router.get('/women_collection', isAuthenticated, pageController.getWomenCollectionPage);  ///Collection
+
+router.get('/men_collection', isAuthenticated, pageController.getMenCollectionPage);  ///Collection
+
+router.get('/makeup', isAuthenticated, pageController.getMakeupPage);  /// make up Collection
+
+router.get('/accessories', isAuthenticated, pageController.getAccessoriesPage);  /// accessories Collection
+
+router.get('/shoes', isAuthenticated, pageController.getShoesPage);  /// shoes Collection
+
+router.get('/sale', isAuthenticated, pageController.getSalePage);  /// sale Collection
+
+
+router.get('/coming', isAuthenticated, pageController.getComingPage);  /// coming
+
+router.get('/blog', isAuthenticated, pageController.getBlogPage);  /// blog Collection
+
+router.get('/about', isAuthenticated, pageController.getAboutPage);  /// about
+
+router.get('/contact', isAuthenticated, pageController.getContactPage);  /// contact
 
 router.get('/home', isAuthenticated, pageController.getHomePage);   // first execute the isAuthenticated function 
 

@@ -26,6 +26,56 @@ exports.getHomePage = (req, res) => {
     res.render(path.join(__dirname, '../views/home'), { sessionInfo: sessionData }); 
 };
 
+exports.getWomenCollectionPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/women_collection'), { sessionInfo: sessionData }); 
+};
+
+exports.getMenCollectionPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/men_collection'), { sessionInfo: sessionData }); 
+};
+
+exports.getMakeupPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/makeup'), { sessionInfo: sessionData }); 
+};
+
+exports.getAccessoriesPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/accessories'), { sessionInfo: sessionData }); 
+};
+
+exports.getShoesPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/shoes'), { sessionInfo: sessionData }); 
+};
+
+exports.getSalePage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/sale'), { sessionInfo: sessionData }); 
+};
+
+exports.getBlogPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/blog'), { sessionInfo: sessionData }); 
+};
+
+exports.getAboutPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/about'), { sessionInfo: sessionData }); 
+};
+
+exports.getComingPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/coming'), { sessionInfo: sessionData }); 
+};
+
+exports.getContactPage = (req, res) => {
+    const sessionData = req.session;
+    res.render(path.join(__dirname, '../views/contact'), { sessionInfo: sessionData }); 
+};
+
 exports.getAdminPage = (req, res) => {
     console.log("admin page")
     const sessionData = req.session;
