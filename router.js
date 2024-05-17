@@ -40,7 +40,6 @@ const isAuthenticated = (req, res, next) => {
 
     // Check if the accessed route is a protected route for either regular users or admins
     if (protectedPages.includes(currentUrl) && !req.session.isAdmin) {
-        console.log("print");
         // Grant access for regular users
         return next();
     } else if (adminProtectedPages.includes(currentUrl) && req.session.isAdmin) {
@@ -77,7 +76,6 @@ router.get('/accessories', isAuthenticated, pageController.getAccessoriesPage); 
 router.get('/shoes', isAuthenticated, pageController.getShoesPage);  /// shoes Collection
 
 router.get('/sale', isAuthenticated, pageController.getSalePage);  /// sale Collection
-
 
 router.get('/coming', isAuthenticated, pageController.getComingPage);  /// coming
 
