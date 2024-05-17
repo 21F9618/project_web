@@ -79,7 +79,7 @@ const barChartOptions = {
     theme: 'dark',
   },
   xaxis: {
-    categories: ['flowers', 'cardigans', 'toys'], // Example categories for five bars
+    categories: ['tshirts', 'trousers', 'shoes'], // Example categories for five bars
     title: {
       style: {
         color: '#f5f7ff',

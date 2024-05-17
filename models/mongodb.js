@@ -103,7 +103,7 @@ async function confirmLogin(req, res) {
                 res.redirect('/home');
             }else{
                 console.log("in admin wali else")
-                res.redirect('/Aproduct')
+                res.redirect('/admin')
             }
 
         } else {
